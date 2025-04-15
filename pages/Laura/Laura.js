@@ -1,36 +1,47 @@
-import { Image } from 'expo-image'
-import { SafeAreaView, View, Text, TextInput, SectionList } from 'react-native'
-import { Search } from "lucide-react";
+import React from 'react';
+import { View, Text, TextInput, SectionList, FlatList } from 'react-native'
 import CardLaura from "../../components/CardLaura"
 import ItensLaura from "../../components/ItensLaura"
 
-export default function Laura() {
+const icons = ['🍦', '🍪', '🍫', '🧁', '☕']
+
+export default function Laura({navigation}) {
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
 
             <View style={styles.texts}>
                 <Text style={styles.title}>La Douceur</Text>
                 <Text style={styles.subtitle}>A melhor doceria do país!</Text>
             </View>
 
-            <View style={{flexDirection: "row", justifyContent: "center", gap: 10}}>
+            <View style={{ flexDirection: "row", justifyContent: "center", gap: 10 }}>
                 <CardLaura image={(require('../../assets/macaron.jpg'))} />
                 <CardLaura image={(require('../../assets/cremeBrulee.jpg'))} />
             </View>
 
-            <View style={{flexDirection: "row", justifyContent: "center", gap: 20}}>
+            <View style={{ flexDirection: "row", justifyContent: "center", gap: 10 }}>
                 <TextInput style={styles.input} placeholder='Pesquise aqui'></TextInput>
-                <Text style={styles.iconSearch}><Search /></Text>
+                <TouchableOpacity onPress={() => navigation.navigate("LauraProfile")} >
+                <Text style={styles.search}>Navegar</Text>
+                </TouchableOpacity>
             </View>
 
-            <View style={{flexDirection: "column", justifyContent: "center", gap: 20}}>
+            <View style={{ flexDirection: "column", justifyContent: "center", gap: 10 }}>
                 <SectionList>
                     <ItensLaura image={(require('../../assets/milkshakePistache.jpg'))} title='Milkshake de Pistache' price='R$18,00' />
                     <ItensLaura image={(require('../../assets/brownie.jpg'))} title='Brownie' price='R$15,00' />
                     <ItensLaura image={(require('../../assets/cookie.jpg'))} title='Cookie com gotas de chocolate' price='R$8,00' />
                 </SectionList>
             </View>
-        </SafeAreaView>
+
+            <View style={{ flexDirection: "column", justifyContent: "center", gap: 10 }}>
+                <FlatList
+                    data={icons}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({ item }) => <Text style={styles.item}>{item}</Text>}
+                />
+            </View>
+        </View>
     )
 };
 
@@ -40,7 +51,7 @@ const styles = StyleSheet.create({
         gap: 20,
         backgroundColor: 'white',
     },
-    texts:{
+    texts: {
         marginVertical: 10,
     },
     title: {
