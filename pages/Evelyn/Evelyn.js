@@ -1,4 +1,4 @@
-
+import { Image } from "react-native";
 import { SafeAreaView, ScrollView, View, TextInput } from "react-native";
 import { Search } from "lucide-react";
 import Cards from "../../components/CardsEvelyn";
@@ -50,14 +50,20 @@ export default function Evelyn() {
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => (
               <View style={styles.cardsContainer}>
-                <View style={[styles.cardContainer, { width: cardWidth }]}>
-                  <Cards />
-                </View>
+                <Image
+                  source={item.image}
+                  style={styles.itemImage}
+                  imageStyle={{ borderRadius: 10 }}
+                />
               </View>
             )}
             style={styles.horizontalList}
           />
         </ScrollView>
+
+        <Cards />
+
+
       </View>
     </SafeAreaView>
   );
