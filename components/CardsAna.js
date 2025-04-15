@@ -1,24 +1,24 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, Image, TouchableOpacity} from 'react-native';
 
-export default function Card({image, onPress}){
+export default function Card({foods, onPress}){
     return(
         <TouchableOpacity styles={styles.card}  onPress={onPress}>
-            <Image styles={styles.image} source={image ? foods.local : "foods"} />
+            <Image styles={styles.image} source={foods ? foods.foods : "foods"} />
         </TouchableOpacity>
     )
 };
 
 const styles = StyleSheet({
     card:{
-        margin: 20,
-        padding: "10rem",
-        borderRadius: "2rem",
-        backgroundColor: '#b07a7f',
-        alignItems: 'center',
-        width: "5rem",
+        borderWidth: 1,
+        borderRadius:8,
+        padding:10,
+        margin:10,
+        height:60,
+        alignItems: "center",
     },
-    image:{
+    foods:{
         width: "3rem",
         height: "2rem"
     }

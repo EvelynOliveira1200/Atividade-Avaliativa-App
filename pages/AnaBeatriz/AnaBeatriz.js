@@ -1,8 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, SafeAreaView,  ScrollView, FlatList, SectionList, Dimensions  } from 'react-native';
+import { View, StyleSheet, SafeAreaView,  ScrollView, FlatList, SectionList, Dimensions  } from 'react-native';
 import HeaderSouza from '../../components/HeaderSouza';
 import CardsAna from '../../components/CardsAna';
-import { ScrollView } from 'react-native-web';
 
 export default function AnaBeatriz() {
     const foods = [
@@ -27,7 +26,7 @@ export default function AnaBeatriz() {
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) =>(
                     <View style={[styles.cardContainer, {width: cardWidth}]}>
-                       <CardsAna image={item} onPress={() => navigation.navigate("foods", { image: item })} />
+                       <CardsAna foods={item} onPress={() => navigation.navigate("foods", { foods: item })} />
                     </View>
                 )}
                 />
@@ -42,6 +41,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
         flex: 1,
         paddingTop: 20,
+        width:2
     },
     scrollContainer: {
         paddingHorizontal: 10,
