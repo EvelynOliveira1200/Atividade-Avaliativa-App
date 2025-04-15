@@ -2,21 +2,22 @@ import React from 'react';
 import { View, StyleSheet, SafeAreaView,  ScrollView, FlatList, SectionList, Dimensions  } from 'react-native';
 import HeaderSouza from '../../components/HeaderSouza';
 import CardsAna from '../../components/CardsAna';
+import Section from '../../components/SectionAna'
 
 export default function AnaBeatriz() {
     const foods = [
-        {id: '1', image:"https://www.southernliving.com/thmb/dnsycw_-mf35yKRkq3cBsThVzrY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Southern-Living_Macarons_025-0e05e0cd226d44609f55ed8bc9cd3a3e.jpg",},
-        {id: '1', image:"https://www.southernliving.com/thmb/dnsycw_-mf35yKRkq3cBsThVzrY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Southern-Living_Macarons_025-0e05e0cd226d44609f55ed8bc9cd3a3e.jpg"},
-        {id: '1', image:"https://www.southernliving.com/thmb/dnsycw_-mf35yKRkq3cBsThVzrY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Southern-Living_Macarons_025-0e05e0cd226d44609f55ed8bc9cd3a3e.jpg"}
+        {id: '1', foods:"https://www.southernliving.com/thmb/dnsycw_-mf35yKRkq3cBsThVzrY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Southern-Living_Macarons_025-0e05e0cd226d44609f55ed8bc9cd3a3e.jpg",},
+        {id: '2', foods:"https://www.southernliving.com/thmb/dnsycw_-mf35yKRkq3cBsThVzrY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Southern-Living_Macarons_025-0e05e0cd226d44609f55ed8bc9cd3a3e.jpg"},
+        {id: '3', foods:"https://www.southernliving.com/thmb/dnsycw_-mf35yKRkq3cBsThVzrY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Southern-Living_Macarons_025-0e05e0cd226d44609f55ed8bc9cd3a3e.jpg"}
     ]
 
     const screenWidth = Dimensions.get("window").width;
     const cardWidth = screenWidth / 2;
 
     return (
-        <View styles={styles.allpage}>
+        <View styles={styles.container}>
             <HeaderSouza />
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView>
             <ScrollView style={styles.scrollContainer}>
                 <FlatList
                 style={styles.horizontalList}
@@ -32,26 +33,38 @@ export default function AnaBeatriz() {
                 />
             </ScrollView>
         </SafeAreaView>
+        <Section text="Seja bem vindo a nossa confeitaria! Esteja pronto para apreciar os melhores doces de toda região, venha conhecer um pedacinho do paraíso de Paris!"/>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'red',
-        flex: 1,
-        paddingTop: 20,
-        width:2
+        display: "flex",
+        
     },
-    scrollContainer: {
-        paddingHorizontal: 10,
+    image: {
+        width: "2rem",
+        height: "2rem",
+        borderRadius: "100%",
+    },
+    title: {
+        color: "black",
     },
     cardContainer: {
-        backgroundColor: 'rgb(183, 252, 99)',
+        backgroundColor: '#D4B2A7',
         marginHorizontal: 10,
         marginBottom: 10,
     },
     horizontalList: {
         paddingBottom: 30,
-    }
+    },
+    scrollContainer: {
+        paddingHorizontal: 10,
+    },
+    containerText: {
+        textAlign: "justify",
+        maxWidth: "10rem",
+        height: "12rem"
+    },
 })
