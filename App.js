@@ -1,4 +1,3 @@
-import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import Tab from "./navigation/TabNavigatorAll";
 
@@ -8,4 +7,5 @@ export default function App() {
             <Tab />
         </NavigationContainer>
     );
+
 }
