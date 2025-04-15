@@ -1,11 +1,10 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 
-export default function Card({image, name}){
+export default function Card({image, onPress}){
     return(
-        <TouchableOpacity styles={styles.card}>
-            <Image styles={styles.image} source={image} />
-            <Text styles={styles.name}>{name}</Text>
+        <TouchableOpacity styles={styles.card}  onPress={onPress}>
+            <Image styles={styles.image} source={image ? foods.local : "foods"} />
         </TouchableOpacity>
     )
 };
