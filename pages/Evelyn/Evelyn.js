@@ -1,31 +1,64 @@
-import { Image } from "react-native";
-import { StyleSheet, SafeAreaView, ScrollView, View, Text, TextInput } from "react-native";
-import { Icon } from 'lucide-react';
+
+import { SafeAreaView, ScrollView, View, TextInput } from "react-native";
 import { Search } from "lucide-react";
+import Cards from "../../components/CardsEvelyn";
 
+export default function Evelyn() {
+  const categorias = [
+    {
+      id: 1,
+      image: require("../../assets/img.jpg"),
+      textdescription: "Doces",
+    },
+    {
+      id: 2,
+      image: require("../../assets/img.jpg"),
+      textdescription: "Doces",
+    },
+    {
+      id: 3,
+      image: require("../../assets/img.jpg"),
+      textdescription: "Doces",
+    },
+    {
+      id: 4,
+      image: require("../../assets/img.jpg"),
+      textdescription: "Doces",
+    },
+  ];
 
-export default function HomeScreen({ navigation }) {
-    const screenWidth = Dimensions.get("window").width;
-    
-    return (
-        <SafeAreaView style={style.container}>
-            <View>
-                <Header>
-                    <TextInput>
-                        style={style.input}
-                        placeholder={"Pesquisar"}
-                        placeholderTextColor="#747474"
-                        value={search}
-                    </TextInput>
+  const screenWidth = Dimensions.get("window").width;
 
-                    <Search color="rgb(94, 94, 94)" size={48}/>
-                </Header>
+  return (
+    <SafeAreaView style={style.container}>
+      <View>
+        <Header>
+          <TextInput>
+            style={style.input}
+            placeholder={"Pesquisar"}
+            placeholderTextColor="#747474" value={search}
+          </TextInput>
 
-                <ScrollView>
-                    <Text>Teste Evelyn</Text>
-                </ScrollView>
-            </View>
-        </SafeAreaView>
-    )
+          <Search color="rgb(94, 94, 94)" size={48} />
+        </Header>
+
+        <ScrollView>
+          <FlatList
+            data={categorias}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => (
+              <View style={styles.cardsContainer}>
+                <View style={[styles.cardContainer, { width: cardWidth }]}>
+                  <Cards />
+                </View>
+              </View>
+            )}
+            style={styles.horizontalList}
+          />
+        </ScrollView>
+      </View>
+    </SafeAreaView>
+  );
 }
-
