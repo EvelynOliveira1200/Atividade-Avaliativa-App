@@ -3,7 +3,8 @@ import { StyleSheet, Text, View, FlatList, ScrollView, Dimensions, SafeAreaView 
 import Header from "../../components/HeaderGiovanna";
 import Card from "../../components/CardsGiovanna";
 
-const { width } = Dimensions.get('window');
+const screenWidth = Dimensions.get("window").width;
+const cardWidth = screenWidth / 2;
 
 const banner = [
     { id: 1, image: require('../../assets/doce1.jpg') },
@@ -16,20 +17,7 @@ export default function App() {
         <SafeAreaView style={styles.container}>
             <Header />
             <ScrollView>
-
-                <FlatList
-                data={banner}
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                keyExtractor={(item) => item.id.toString()}
-                renderItem={({ item }) => (
-                    <View style={styles.containerBanner}>
-                        <Image source={item.image} style={styles.imageBanner}/>
-                    </View>
-                )}
-                style={styles.horizontalList}
-                />
-
+                
             </ScrollView>
 
             <Text style={styles.title}>Conheça alguns dos nossos pratos! 🧁</Text>
