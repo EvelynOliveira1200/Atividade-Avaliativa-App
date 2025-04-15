@@ -3,6 +3,8 @@ import { View, StyleSheet, Text, Image, Dimensions, SafeAreaView, FlatList, Scro
 
 import User from "../../assets/User.jpg"
 import CardsIsabella from "../../components/CardsIsabella";
+import ProfileIsabella from "./ProfileIsabella";
+import FooterIsabella from "../../components/FooterIsabella";
 
 export default function Isabella() {
     const local = [
@@ -36,28 +38,30 @@ export default function Isabella() {
                 </ScrollView>
             </SafeAreaView>
             <Text style={styles.containerText}>La Douceur de Paris é uma confeitaria com o foco em doces e comidas tradicionais da França. Revestido e pensado na estética francesa, com o seu aroma de café e doces, acolhe quaquel um que pela porta passar. La Douceur de Paris é um cantinho especial para as almas que desejam descansar, trabalhar com tranquilidade ou ler acompanhado de lanches deliciosos. Aqui você é sempre bem-vindo! 🧁🥐 </Text>
-        <TouchableOpacity style={styles.buttonPage}>
-            <Text>Veja o perfil da Dev!</Text>
+        <TouchableOpacity style={styles.buttonPage} source={ProfileIsabella}>
+            <Text style={styles.textButton} onPress={() => navigation.navigate("Isabella")}>Veja o perfil da Dev!</Text>
         </TouchableOpacity>
+        <FooterIsabella />
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        display: "flex",
-        
+        flex: 1,
+        flexDirection: "column",
+        alignItems: "center",
     },
     image: {
+        display: "flex",
         width: "2rem",
         height: "2rem",
         borderRadius: "100%",
-    },
-    title: {
-        color: "black",
+        left: 160,
+        marginVertical: "0.5rem",
     },
     cardContainer: {
-        backgroundColor: '#B62625',
+        backgroundColor: '#5E3A27',
         marginHorizontal: 10,
         marginBottom: 10,
     },
@@ -69,10 +73,18 @@ const styles = StyleSheet.create({
     },
     containerText: {
         textAlign: "justify",
-        maxWidth: "10rem",
-        height: "12rem"
+        maxWidth: "15rem",
+        height: "12rem",
     },
     buttonPage: {
-        
+        backgroundColor: "#D4AF9D",
+        width: "15rem",
+        borderRadius: "1rem",
+        marginHorizontal: "5rem",
+        marginVertical: "4rem",
+        padding: "2rem",
+    },
+    textButton: {
+        textAlign: "center",
     }
 })
