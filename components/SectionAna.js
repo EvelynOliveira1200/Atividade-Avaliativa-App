@@ -10,16 +10,5 @@ export default function Section({text}){
 }
 
 const styles= StyleSheet.create({
-    section:{
-        margin: 20,
-        padding: "10rem",
-        borderRadius: "2rem",
-        backgroundColor: '#b07a7f',
-        alignItems: 'center',
-        width: "5rem",
-    },
-
-    sectionText:{
-        fontSize: 20
-    }
+    
 });
