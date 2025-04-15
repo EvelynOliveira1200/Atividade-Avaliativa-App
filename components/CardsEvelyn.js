@@ -1,5 +1,4 @@
-import { View, Text, StyleSheet, Image, imageSource, textdescription} from "react-native";
-import { Image } from "expo-image";
+import { View, Text, StyleSheet, imageSource, textdescription} from "react-native";
 
 export default function Cards() {
     return(

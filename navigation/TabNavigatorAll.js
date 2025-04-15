@@ -4,7 +4,9 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 import Isabella from "../pages/Isabella/Isabella";
 import AnaBeatriz from "../pages/AnaBeatriz/AnaBeatriz";
+import Evelyn from "../pages/Evelyn/Evelyn"
 import Laura from "../pages/Laura/Laura";
+
 
 
 const Tab = createBottomTabNavigator();
@@ -33,6 +35,15 @@ export default function TabNavigation() {
             <Tab.Screen
                 name="Laura Page"
                 component={Laura}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <Icon name="add" color={color} size={size} />
+                    ),
+                }}
+            />
+            <Tab.Screen 
+                name="Evelyn page" 
+                component={Evelyn} 
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <Icon name="add" color={color} size={size} />
