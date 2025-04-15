@@ -16,7 +16,26 @@ export default function ItensLaura({image, text, price}) {
 const styles = StyleSheet.create({
     card: {
         height: 30,
+        width: 70,
+        borderRadius: 5,
+    },
+
+    img: {
+        height: 30,
         width: 30,
         borderRadius: 5,
     },
+
+    title: {
+        fontSize: 16,
+    },
+
+    price: {
+        fontSize: 12,
+    },
+
+    icon: {
+        height: 10,
+        width: 10,
+    }
 })

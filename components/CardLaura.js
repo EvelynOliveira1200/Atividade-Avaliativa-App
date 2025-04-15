@@ -10,7 +10,7 @@ export default function CardLaura({image}) {
 };
 
 const styles = StyleSheet.create({
-    card: {
+    img: {
         height: 30,
         width: 30,
         borderRadius: 5,
