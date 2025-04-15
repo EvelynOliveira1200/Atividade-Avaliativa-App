@@ -3,7 +3,7 @@ import { TouchableOpacity, StyleSheet, Image } from "react-native";
 export default function CardsIsabella({ local, onPress }) {
     return (
         <TouchableOpacity style={styles.card} onPress={onPress} >
-        <Image source={local ? candy.local : "local"}/>
+        <Image source={local ? local.local : "local"}/>
         </TouchableOpacity> 
     )
 }

@@ -36,8 +36,8 @@ export default function Isabella() {
                 </ScrollView>
             </SafeAreaView>
             <Text style={styles.containerText}>La Douceur de Paris é uma confeitaria com o foco em doces e comidas tradicionais da França. Revestido e pensado na estética francesa, com o seu aroma de café e doces, acolhe quaquel um que pela porta passar. La Douceur de Paris é um cantinho especial para as almas que desejam descansar, trabalhar com tranquilidade ou ler acompanhado de lanches deliciosos. Aqui você é sempre bem-vindo! 🧁🥐 </Text>
-        <TouchableOpacity>
-            <Text></Text>
+        <TouchableOpacity style={styles.buttonPage}>
+            <Text>Veja o perfil da Dev!</Text>
         </TouchableOpacity>
         </View>
     );
@@ -72,4 +72,7 @@ const styles = StyleSheet.create({
         maxWidth: "10rem",
         height: "12rem"
     },
+    buttonPage: {
+        
+    }
 })
